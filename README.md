@@ -1,1 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Brinit (Bootstrap Replica)</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body { font-family: "Inter", sans-serif; background-color: #009999; }
+    .hero { padding: 3rem 0; background: #009999; }
+    .footer { color: #fff; padding: 2rem 0; background-color: black; }
+    .footer a { color: white; text-decoration: none; }
+
+    .navbar-custom { background-color: #009999 !important; }
+    .navbar-custom .navbar-brand img { height: 55px; margin-right: 10px; }
+    .navbar-custom .nav-link { color: white !important; font-weight: 500; margin-right: 20px; }
+    .navbar-custom .nav-link:hover,
+    .navbar-custom .nav-link.active { color: #90EE90 !important; }
+    .navbar-custom .navbar-toggler { border-color: white; }
+    .contact-btn {
+      background-color: #90EE90; color: black; font-weight: 600;
+      border-radius: 25px; padding: 6px 20px; border: none;
+      transition: all 0.3s ease;
+    }
+    .contact-btn:hover { background-color: #76d376; }
+    .light-transparent-btn {
+      background-color: rgba(255,255,255,0.15);
+      color: white; border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 25px; padding: 5px 15px;
+      font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+      display: inline-block;
+    }
+    .transparent-btn {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 25px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+    .transparent-btn:hover { background-color: rgba(255, 255, 255, 0.2); }
+    .text-light-green { color: #90EE90; }
+    .socials { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
+    .social-icon {
+      background-color: #009999; width: 45px; height: 45px; border-radius: 50%;
+      display: flex; justify-content: center; align-items: center;
+      color: white; font-size: 20px; text-decoration: none; transition: all 0.3s ease;
+    }
+    .social-icon:hover { background-color: black; color: white; transform: scale(1.1); }
+    .contact-form-container { display: flex; justify-content: flex-end; }
+    .typewriter-box {
+      display: inline-block;
+      border-right: 3px solid black;
+      color: #009999;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.7s step-end infinite;
+      vertical-align: middle;
+      min-width: 380px;
+    }
+    @keyframes blink { 50% { border-color: transparent; } }
+    .send-btn {
+      background-color: #009999 !important;
+      color: white !important;
+      padding: 10px 35px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .send-btn:hover {
+      background-color: #007f7f !important;
+      color: white !important;
+    }
+    .subscribe-btn {
+      background-color: #90EE90 !important;
+      color: black !important;
+      font-weight: 600;
+      border: none;
+      padding: 10px 50px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .subscribe-btn:hover {
+      background-color: #76d376 !important;
+      color: black !important;
+    }
+    .subscribe-section { background-color: black; }
+    .row i { display: block; margin-bottom: 8px; }
+    /* Footer social icons fix */
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .footer-social-icon {
+      background-color: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer-social-icon i {
+      color: black; /* visible before hover */
+    }
+    .footer-social-icon:hover {
+      background-color: #009999;
+      transform: scale(1.1);
+    }
+    .footer-social-icon:hover i {
+      color: black; /* remain visible on hover */
+    }
+
+    /* Custom footer styles (for enhanced look matching your image) */
+    .custom-footer {
+      background: #121212;
+      color: #ddd;
+      padding: 3rem 0 2rem;
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+    }
+    .footer-logo-section {
+      border-right: 1px solid #222;
+      padding-right: 2rem;
+    }
+    .footer-logo {
+      max-width: 140px;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .footer-slogan {
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      color: #90ee90;
+      font-weight: 600;
+    }
+    .custom-footer .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+    .custom-footer .footer-social-icon {
+      background: white;
+      color: black;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .custom-footer .footer-social-icon i {
+      font-size: 18px;
+    }
+    .custom-footer .footer-social-icon:hover {
+      background-color: #009999;
+      color: black;
+      transform: scale(1.1);
+    }
+    .footer-links-section {
+      border-right: 1px solid #222;
+      padding: 0 2rem;
+    }
+    .footer-links-section h5 {
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .footer-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links-list li {
+      margin-bottom: 10px;
+    }
+    .footer-links-list a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer-links-list a:hover {
+      color: #90ee90;
+    }
+    .footer-contact-section h5 {
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .footer-contact-section p {
+      color: #888;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-contact-section p i {
+      color: #90ee90;
+      font-size: 18px;
+      min-width: 18px;
+    }
+    .footer-contact-section a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    .footer-contact-section a:hover {
+      color: #90ee90;
+    }
+    .footer-bottom {
+      border-top: 1px solid #222;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://brinit.in/wp-content/uploads/2024/06/brinit-web-mix-2-e1718364518621-1536x765.png" alt="Brinit Logo">
+    </a>
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">☰</button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn contact-btn" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6">
+        <span class="light-transparent-btn">Comprehensive Creative Marketing Company</span>
+        <h1 class="fw-bold text-white mt-2">Contact <span class="text-light-green">Us</span></h1>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://brinit.in/wp-content/uploads/2024/06/contact-illustration.png" class="img-fluid" alt="Contact illustration">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-4 mb-3 mb-md-0 text-center">
+        <img src="https://mgp.co.ir/assets/lottiepic/contacting.webp" alt="Contact Illustration" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-md-8">
+        <p class="fs-5 d-flex align-items-center">
+          <span style="color:black;font-weight:600; margin-right:10px;">Drop A Note,</span>
+          <span id="typewriter" class="typewriter-box"></span>
+        </p>
+        <form id="contactForm">
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name" required></div>
+          <div class="mb-3"><input type="email" class="form-control" placeholder="Your Email" required></div>
+          <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Message" required></textarea></div>
+          <button type="submit" class="btn send-btn">Send</button>
+          <div id="formMsg" class="mt-2 small text-success"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row g-4 text-center text-md-start">
+      <div class="col-md-3">
+        <i class="fas fa-map-marker-alt fa-2x" style="color: gray;"></i>
+        <h5>Location Info :</h5>
+        <p>Citylink Tower, Thampanoor Road, Bakery Junction, Trivandrum, Kerala 695001</p>
+      </div>
+      <div class="col-md-3">
+        <i class="fas fa-phone fa-2x" style="color: gray;"></i>
+        <h5>Phone No :</h5>
+        <p>+91 7012 99 8181</p>
+      </div>
+      <div class="col-md-3">
+        <i class="fas fa-envelope fa-2x" style="color: gray;"></i>
+        <h5>Email Info :</h5>
+        <p><a href="mailto:info@brinit.in">info@brinit.in</a></p>
+      </div>
+      <div class="col-md-3">
+        <i class="fas fa-globe fa-2x" style="color: gray;"></i>
+        <h5>Website Url :</h5>
+        <p><a href="https://www.brinit.in">www.brinit.in</a></p>
+      </div>
+    </div>
+
+    <div class="socials mt-5">
+      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <div style="border-radius: 8px; overflow: hidden;">
+          <iframe src="https://www.google.com/maps?q=Citylink+Tower+Trivandrum&output=embed"
+                  class="w-100" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe -->
+<section class="py-5 subscribe-section">
+  <div class="container text-center">
+    <button class="transparent-btn">Comprehensive Creative Marketing Company</button>
+    <h3 class="fw-bold mt-2">
+      <span style="color:#33cccc;">Get Notified by</span>
+      <span style="color:#90EE90;">Signing in</span>
+      <span style="color:#33cccc;">Now</span>
+    </h3>
+    <p style="color:white;">Sign in now to receive timely notifications and stay updated with the latest content and offers</p>
+    <form id="subscribeForm" class="row g-2 justify-content-center">
+      <div class="col-md-6"><input type="email" class="form-control" placeholder="Enter email to subscribe" required></div>
+      <div class="col-auto"><button type="submit" class="btn subscribe-btn">Subscribe</button></div>
+    </form>
+    <div id="subscribeMsg" class="mt-2 small"></div>
+  </div>
+</section>
+
+<!-- ENHANCED Footer STARTS HERE -->
+<footer class="custom-footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 footer-logo-section">
+        <img src="https://brinit.in/wp-content/uploads/2024/06/brinit-web-mix-2-e1718364518621-1536x765.png" alt="Brin'IT Logo" class="footer-logo" />
+        <p class="footer-slogan">Bringing you The <span class="highlight">nX</span> Growth</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="col-md-3 footer-links-section">
+        <h5>Quick Links</h5>
+        <ul class="footer-links-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 footer-links-section">
+        <h5>Services</h5>
+        <ul class="footer-links-list">
+          <li><a href="https://brinit.in/digital-marketing-company/">Digital Marketing</a></li>
+          <li><a href="https://brinit.in/web-design-company/">Web Design</a></li>
+          <li><a href="https://brinit.in/advertising-company/">Ad Management</a></li>
+          <li>Graphic Designing</li>
+          <li><a href="https://brinit.in/influencer-marketing-company-service/">Influencer Marketing</a></li>
+          <li><a href="https://brinit.in/seo-services/">Search Engine Optimization</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 footer-contact-section">
+        <h5>Contact Info</h5>
+        <p><i class="fas fa-map-marker-alt"></i> Citylink Tower, Thampanoor Road, Bakery Junction, Near Reserve Bank Of India, Trivandrum, Kerala 695001</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:connect@brinit.in">connect@brinit.in</a></p>
+        <p><i class="fas fa-phone"></i> (+91) 7012 99 8181</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM to 6:00 PM</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <small>Copyright © 2024. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+<!-- ENHANCED Footer ENDS HERE -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formMsg').textContent = "✅ Your message has been sent!";
+  });
+  document.getElementById('subscribeForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('subscribeMsg').textContent = "✅ You have been subscribed!";
+  });
+
+  const phrases = ["Let's Break the Wall — ", "let's conquer it all, ", "let's do what's best, ", "let's turn the page."];
+  const textEl = document.getElementById("typewriter");
+  let phrase = 0, char = 0;
+
+  function typeText(){
+    if(phrase < phrases.length){
+      if(char === 0) textEl.textContent = "";
+      if(char < phrases[phrase].length){
+        textEl.textContent += phrases[phrase].charAt(char);
+        char++;
+        setTimeout(typeText, 70);
+      } else {
+        setTimeout(() => {
+          textEl.textContent = "";
+          char = 0;
+          phrase++;
+          if(phrase >= phrases.length) phrase = 0;
+        }, 1000);
+        setTimeout(typeText, 1100);
+      }
+    }
+  }
+  setTimeout(typeText, 1000);
+</script>
+
+</body>
+</html>
 
